@@ -1,0 +1,101 @@
+
+<!DOCTYPE html> 
+  
+<html> 
+<head> 
+    <title>Tic Tac Toe</title> 
+</head> 
+  
+<!-- Adding some style to table (OPTIONAL) -->
+<style type="text/css"> 
+
+    label{
+        color: red;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: sans-serif;
+        text-align: center;
+        margin: 50px;
+    }
+
+    blink {
+      text-decoration: blink;
+      color: #1c87c9;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: sans-serif;
+      margin: 50px;
+    }
+ 
+    th:tr{ 
+        color: blue; 
+  
+    } 
+    tr:nth-of-type(2n){ 
+        border: 1px solid black; 
+        background-color: rgba(150, 150, 150, 0.5); 
+  
+    } 
+  
+    td{ 
+        padding: 8px 8px; 
+        border: 1px solid black; 
+    } 
+</style> 
+  
+<body> 
+    <body style="background-color:rgb(230, 176, 207);">
+    <form action="/size/play6" method="POST">  
+        {% if msg == "" %}
+            <br><br>
+            <label class="label">Player {{turn}} play your turn. </label>
+            <br>
+            <br>
+        {%else%}
+            <label class="blink">{{msg}} </label>
+            <br>
+            <br>  
+        {% endif %}      
+        <table style="margin-left: 50px;"> 
+        <!-- Table headers -->
+            
+            
+        <!-- For loop logic of jinja template -->
+        {% for i in range(1, 37) %}
+
+            {% if i == 1 or i==7 or i==13 or i==19 or i==25 or i==31 %}   
+                <tr><td>
+            {%else%}
+                <td>
+            {% endif %}
+            
+            {% if results[i] == ' ' %} 
+                <input type = text size="1" maxlength="1" name= {{i}} > 
+            {% else %}
+                {{results[i]}}
+                <input type = hidden name={{i}} value={{results[i]}}> 
+            {% endif %}
+            
+            {% if i == 6 or i==12 or i==18 or i==24 or i==30 or i==36 %}   
+                </tr></td>
+            {%else%}
+                </td>
+            {% endif %}
+        {% endfor %}
+        <!-- table rows -->
+
+        </table> 
+        <br>
+        <input style="margin-left: 50px`" type = hidden name= "count" value={{count}}> 
+        <input type = hidden name= "turn" value={{turn}}> 
+        <input type = hidden name= "sizeT" value={{sizeT}}> 
+        <input type = "submit" value ="Submit">
+    </form>
+  
+</body> 
+</html> 
+
+
+
+
+
