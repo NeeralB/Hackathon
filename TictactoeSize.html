@@ -1,0 +1,66 @@
+
+<!DOCTYPE html> 
+  
+<html> 
+<head> 
+    <title>Tic Tac Toe</title> 
+</head> 
+  
+<!-- Adding some style to table (OPTIONAL) -->
+<style type="text/css"> 
+
+    label{
+        color: red;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: sans-serif;
+        text-align: center;
+        margin: 50px;
+    }
+
+    blink {
+      text-decoration: blink;
+      color: #1c87c9;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: sans-serif;
+      margin: 50px;
+    }
+ 
+    th:tr{ 
+        color: blue; 
+  
+    } 
+    tr:nth-of-type(2n){ 
+        border: 1px solid black; 
+        background-color: rgba(150, 150, 150, 0.5); 
+  
+    } 
+  
+    td{ 
+        padding: 8px 8px; 
+        border: 1px solid black; 
+    } 
+</style> 
+  
+<body> 
+    <body style="background-color:powderblue;">
+    <form action="/size" method="POST">  
+        
+            <br><br>
+            <label class="label">Welcome to an exciting game room for playing TicTacToe of your choice of grid size other than regular 3x3.</label>
+            <br><br>
+            <label class="label">Chose what size of TicTacToe game you would like to play. </label>
+            <br>
+            <br>
+            <font size=20px>
+    
+            <input style="margin-left: 50px" type="radio" name="sizeT" value="5" checked>5 x 5<br>  
+            <input style="margin-left: 50px" type="radio" name="sizeT" value="6">6 x 6<br>         
+            <br>
+            <input style="margin-left: 50px" type = "submit" value ="Submit">
+            </font>
+        </form>
+  
+</body> 
+</html> 
